@@ -162,11 +162,44 @@
     margin-top: 35px;
 }
 
-.loader{
-    background: var(--text-primary);
+.loader {
+    background: rgba(255, 255, 255, 0.35);
     width: 320px;
-    height: 7px;
+    height: 10px;
     margin-top: 30px;
-    border: 2px solid var(--text-primary);
-    border-radius: 75px;
+    border-radius: 50px;
+    overflow: hidden;
+    border: none;
+}
+
+.loader span {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #6c3bff,
+        #ff65b8,
+        #ffd84d,
+        #54ddb5,
+        #55bfff
+    );
+
+    animation: loading 3s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 75%;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
